@@ -42,3 +42,5 @@ Example JSON:
 
 The response body is audio bytes. Save it as a `.wav` file when `media_type` is `wav`.
 
+For a configurable client with language/emotion selection, Hermes CLI support, and DeepSeek Harness / QQ native voice delivery, see [the integration guide](dsh_qq.md).
+

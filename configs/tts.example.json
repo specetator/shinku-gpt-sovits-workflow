@@ -1,0 +1,10 @@
+{
+  "api_url": "http://127.0.0.1:9880/tts",
+  "timeout_seconds": 120,
+  "output_dir": "../outputs/audio",
+  "reference": {
+    "ref_audio_path": "F:/AI_audio/shinku-gpt-sovits-workflow/model/reference_shinku_00003390.wav",
+    "prompt_text": "以前は毎日のように見る夢の光景を探して 幽魔はいろいろな世界へ行っていたじゃないか",
+    "prompt_lang": "ja"
+  }
+}

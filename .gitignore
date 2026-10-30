@@ -8,3 +8,6 @@ outputs/
 TEMP/
 runtime/
 GPT-SoVITS*/
+work/
+configs/*.local.json
+integrations/dsh/*.local.yml

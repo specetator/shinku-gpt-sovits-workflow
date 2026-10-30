@@ -2,6 +2,20 @@
 
 This repository documents a GPT-SoVITS v2Pro voice cloning workflow and shares the final model artifacts needed to run the voice through the GPT-SoVITS API.
 
+## Hermes, DeepSeek Harness and QQ voice
+
+The same Shinku API now supports a shared CLI for Hermes and a stdio MCP server for DeepSeek Harness (DSH). For QQ, it reuses Tencent's `@tencent-connect/dsh-qqbot` plugin: generate a WAV, then let `qqbot_send_file` route it through `sendVoice` to the current conversation as a native voice message.
+
+**[中文接入指南：DSH / QQ 原生语音 / Hermes](docs/dsh_qq.md)** · [Validation and compatibility](docs/validation.md)
+
+- `scripts/shinku_tts.py`: shared client, configurable API, language and emotion references; WAV / OGG-Opus output.
+- `scripts/shinku_mcp.py`: DSH tools `synthesize`, `generate_qq_voice`, and `list_emotions`.
+- `scripts/configure_dsh.py`: generate a standalone DSH overlay with local absolute paths.
+- `configs/tts.example.json`: copy to `configs/tts.local.json` and set your server-side reference path.
+- `requirements-mcp.txt`: MCP server dependencies; the WAV CLI uses only Python's standard library.
+
+The QQ plugin handles conversation routing and media delivery. DSH's Web MCP view returns file paths; it does not itself render a QQ voice bubble. Existing Hermes installations can keep using their current API configuration.
+
 ## Contents
 
 Core artifacts:
